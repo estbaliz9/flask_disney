@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Resultados{% endblock %}
+{% block content %}
+<h1>Resultados de búsqueda</h1>
+<table>
+    <tr>
+        <th>Título</th>
+        <th>Director</th>
+        <th>Detalle</th>
+    </tr>
+    {% for peli in peliculas %}
+    <tr>
+        <td>{{ peli['Titulo'] }}</td>
+        <td>{{ peli['Director'] }}</td>
+        <td><a href="{{ url_for('detalle_pelicula', id=peli['ID']) }}">Detalle</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{{ url_for('peliculas') }}">Volver</a>
+{% endblock %}
+

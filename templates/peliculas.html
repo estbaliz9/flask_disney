@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Buscar Películas{% endblock %}
+{% block content %}
+<h1>Buscar películas</h1>
+<form method="POST" action="{{ url_for('listado_peliculas') }}">
+    <input type="text" name="busqueda" placeholder="Título comienza por...">
+    <button type="submit">Buscar</button>
+</form>
+{% endblock %}
+
